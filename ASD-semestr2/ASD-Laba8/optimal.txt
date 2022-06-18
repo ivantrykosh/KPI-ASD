@@ -1,0 +1,18 @@
+def optimal(A):
+	length = float("inf")
+	A[0][0] = A[1][1] = A[2][2] = A[3][3] = A[4][4] = A[5][5] = A[6][6] = float("inf")
+	for i in range(len(A[0])):
+		for j in range(len(A[1])):
+			for k in range(len(A[2])):
+				for g in range(len(A[3])):
+					for m in range(len(A[4])):
+						for p in range(len(A[5])):
+							for y in range(len(A[6])):
+								l = [i, j, k, g, m, p, y]
+								l1 = l
+								l1.sort()
+								if l1 == list(set(l)):
+									if A[0][i] + A[1][j] + A[2][k] + A[3][g] + A[4][m] + A[5][p] + A[6][y] < length:
+										length = A[0][i] + A[1][j] + A[2][k] + A[3][g] + A[4][m] + A[5][p] + A[6][y]
+	print(length)
+	return
